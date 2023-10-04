@@ -1,12 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+// tree structure
 struct Tree{
     int data;
     struct Tree* left;
     struct Tree* right;
 };
 
+// intialization
 struct Tree* newnode(int data)
 {
     struct Tree* node = (struct Tree*)malloc(sizeof(struct Tree));
@@ -16,6 +18,7 @@ struct Tree* newnode(int data)
     return node;
 }
 
+// function to perform inorder
 void inorder(struct Tree* node)
 {
     if(node == NULL)
@@ -26,6 +29,7 @@ void inorder(struct Tree* node)
     inorder(node->right);
 }
 
+// function to perform preorder
 void preorder(struct Tree* node)
 {
     if(node == NULL)
@@ -36,6 +40,7 @@ void preorder(struct Tree* node)
     preorder(node->right);
 }
 
+// function to perform postorder
 void postorder(struct Tree* node)
 {
     if(node == NULL)
@@ -47,6 +52,7 @@ void postorder(struct Tree* node)
     printf("%d -> ",node->data);
 }
 
+// entry-point
 int main()
 {
     struct Tree *root = newnode(1);
